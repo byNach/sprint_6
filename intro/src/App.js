@@ -10,7 +10,6 @@ function App() {
       <Scene phrase = {Strings[2]} />
       <Scene phrase = {Strings[3]} />
     </p>
-
     );
 }
 
