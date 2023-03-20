@@ -1,10 +1,6 @@
-import React, { Fragment } from 'react'
-
 function Scene(props) {
     return (
-        <Fragment>
-            <p>{props.phrase}</p> 
-        </Fragment>
+        <p>{props.phrase}</p>
     )
 };
 
