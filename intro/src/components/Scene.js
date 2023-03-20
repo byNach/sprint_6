@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-function Scene() {
-    return <p>"El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial"</p>
-}
+function Scene(props) {
+    return (
+        <Fragment>
+            <p>{props.phrase}</p> 
+        </Fragment>
+    )
+};
 
 export default Scene;
