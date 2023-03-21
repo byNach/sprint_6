@@ -1,6 +1,8 @@
+import Pstyle from '../styled-p'
+
 function Scene(props) {
     return (
-        <p>{props.phrase}</p>
+        <Pstyle>{props.phrase}</Pstyle>
     )
 };
 
