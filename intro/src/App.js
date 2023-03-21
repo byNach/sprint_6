@@ -3,6 +3,9 @@ import Scene from './components/Scene';
 import Strings from './components/Text';
 import Divstyle from './styled-div';
 import Buttonstyle from './styled-button';
+import Pstyle from './styled-p';
+import PstyleBg from './styled-p-bg';
+
 import { useState } from 'react';
 
 function App() {
@@ -27,13 +30,16 @@ function App() {
 
   return (
     <Divstyle>
-      <h1> {num} </h1>
       <Buttonstyle onClick={anterior}>Anterior</Buttonstyle>
       <Buttonstyle onClick={posterior}>Següent</Buttonstyle>
-      <Scene phrase={Strings[0]} />
-      <Scene phrase={Strings[1]} />
-      <Scene phrase={Strings[2]} />
-      <Scene phrase={Strings[3]} />
+        {Strings.map((e, index) => {
+          if (index === num) {
+            return <PstyleBg><Scene phrase={Strings[index]} /></PstyleBg>
+          }
+          else {
+            return <Pstyle><Scene phrase={Strings[index]} /></Pstyle>
+          }
+        })}
     </Divstyle>
   );
 }
