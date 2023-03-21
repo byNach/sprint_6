@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Pstyle = styled.p`
+const PstyleBg = styled.p`
     font-size: 26px;
     border: 2px solid black;
     border-radius: 90px;
@@ -10,5 +10,7 @@ const Pstyle = styled.p`
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
+    background-color: red;
+    color: white;
 `
-export default Pstyle;
+export default PstyleBg;

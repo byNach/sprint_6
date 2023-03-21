@@ -1,6 +1,6 @@
 function Scene(props) {
     return (
-        <p>{props.phrase}</p>
+        <span>{props.phrase}</span>
     )
 };
 
