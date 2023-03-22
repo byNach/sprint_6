@@ -17,7 +17,6 @@ const EntrarButton = styled.button`
   );
   border: none;
   border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
   outline: none;
@@ -25,14 +24,14 @@ const EntrarButton = styled.button`
   bottom: 8%;
   right: 6%;
   padding: 10px;
-
+  animation: shadowPulse 1s infinite linear;
+  
   &::before {
     content: '';
     border-radius: 1000px;
     min-width: calc(300px + 12px);
     min-height: calc(60px + 12px);
-    border: 6px solid #00ffcb;
-    box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+    border: 6px solid #4FD1C5;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,28 +39,37 @@ const EntrarButton = styled.button`
     opacity: 0;
   }
 
+  &:hover {
+    animation: sin-animacion 0s;
+  }
   &:hover::before,
   &:focus::before {
     opacity: 1;
   }
-
-  &:hover::after,
-  &:focus::after {
-    animation: ring 1.5s infinite;
-  }
   
-  @keyframes ring {
+  @keyframes shadowPulse {
     0% {
-      width: 30px;
-      height: 30px;
-      opacity: 1;
+      box-shadow: 0 0 8px 6px transparent,
+      0 0 0 0 transparent,
+      0 0 0 0 transparent;
     }
-    100% {
-      width: 300px;
-      height: 300px;
-      opacity: 0;
+
+    10% {
+      box-shadow: 0 0 8px 6px rgb(138 216 100),
+      0 0 12px 10px transparent,
+      0 0 12px 5px #4FD1C5;
+    }
+
+    80%, 100% {
+      box-shadow: 0 0 8px 6px transparent,
+      0 0 0 40px transparent,
+      0 0 0 40px transparent;
     }
   }
+  @keyframes sin-animacion {
+  0% { }
+  100% { }
+}
 `;
 
 export default EntrarButton;
