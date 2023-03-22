@@ -4,7 +4,7 @@ const EntrarButton = styled.button`
   min-width: 300px;
   min-height: 60px;
   font-family: 'Nunito', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 700;
@@ -21,9 +21,10 @@ const EntrarButton = styled.button`
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
   outline: none;
-  position: relative;
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
   padding: 10px;
-  margin-top: 80vh;
 
   &::before {
     content: '';
@@ -37,26 +38,11 @@ const EntrarButton = styled.button`
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: all 0.3s ease-in-out 0s;
   }
 
   &:hover::before,
   &:focus::before {
     opacity: 1;
-    animation: ring 1.5s infinite;
-  }
-
-  &::after {
-    content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    border: 6px solid #00ffcb;
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   &:hover::after,
