@@ -43,19 +43,17 @@ function App() {
           <Buttonstyle onClick={posterior}>Següent</Buttonstyle>
           {Strings.map((e, index) => {
             if (index === num) {
-              return <PstyleBg><Scene phrase={Strings[index]} /></PstyleBg>
+              return <PstyleBg key={index}><Scene phrase={Strings[index]} /></PstyleBg>
             }
             else {
-              return <Pstyle><Scene phrase={Strings[index]} /></Pstyle>
+              return <Pstyle key={index}><Scene phrase={Strings[index]} /></Pstyle>
             }
           })}
         </DivstyleStories>
       ) : (
         <DivStyleWellcome> 
             <Description />
-          
             <EntrarButton  onClick={viewApp}>ENTRAR</EntrarButton>
-                 
         </DivStyleWellcome>
       )}
     </div>
