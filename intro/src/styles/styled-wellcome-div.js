@@ -6,6 +6,7 @@ const DivStyleWellcome = styled.div`
     height: 100vh;
     width: 100vw;
     background-position: center;
+    position: relative;
 `;
 
 export default DivStyleWellcome;
