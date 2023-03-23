@@ -20,14 +20,14 @@ function App() {
   const [num, setNum] = useState(0);
   const anterior = () => {
     if (num === 0) {
-      setNum(3)
+      setNum(Strings.length -1)
     }
     else {
       setNum(num - 1);
     }
   };
   const posterior = () => {
-    if (num === 3) {
+    if (num === Strings.length -1) {
       setNum(0)
     }
     else {
@@ -43,12 +43,13 @@ function App() {
           <Buttonstyle onClick={posterior}>Següent</Buttonstyle>
           {Strings.map((e, index) => {
             if (index === num) {
-              return <PstyleBg key={index}><Scene phrase={Strings[index]} /></PstyleBg>
+              return <PstyleBg key={index}><Scene phrase={Strings[index].text} /></PstyleBg>
             }
             else {
-              return <Pstyle key={index}><Scene phrase={Strings[index]} /></Pstyle>
+              return <Pstyle key={index}><Scene phrase={Strings[index].text} /></Pstyle>
             }
           })}
+       
         </DivstyleStories>
       ) : (
         <DivStyleWellcome> 
