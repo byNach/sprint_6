@@ -1,7 +1,6 @@
 import './App.css';
 import Scene from './components/Scene';
 import Strings from './components/Text';
-import DivstyleStories from './styles/styled-stories-div';
 import Buttonstyle from './styles/styled-button';
 import Pstyle from './styles/styled-p';
 import PstyleBg from './styles/styled-p-bg';
@@ -36,9 +35,9 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       {renderApp ? (
-        <DivstyleStories>
+        <>
           <Buttonstyle onClick={anterior}>Anterior</Buttonstyle>
           <Buttonstyle onClick={posterior}>Següent</Buttonstyle>
           {Strings.map((e, index) => {
@@ -49,15 +48,14 @@ function App() {
               return <Pstyle key={index}><Scene phrase={Strings[index].text} /></Pstyle>
             }
           })}
-       
-        </DivstyleStories>
+        </>
       ) : (
-        <DivStyleWellcome> 
-            <Description />
-            <EntrarButton  onClick={viewApp}>ENTRAR</EntrarButton>
+        <DivStyleWellcome>
+          <Description />
+          <EntrarButton onClick={viewApp}>ENTRAR</EntrarButton>
         </DivStyleWellcome>
       )}
-    </div>
+    </>
   );
 }
 
