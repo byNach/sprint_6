@@ -34,11 +34,11 @@ function App() {
       setNum(num + 1);
     }
   };
-  const imagePosition = num + 1;
+  
   return (
     <>
       {renderApp ? (
-        <DivPhraseBgStyle style={{ backgroundImage: `url(./images/${imagePosition}.jpg` }}>
+        <DivPhraseBgStyle style={{ backgroundImage: `url(./images/${num}.jpg` }}>
           <Buttonstyle onClick={anterior}>Anterior</Buttonstyle>
           <Buttonstyle onClick={posterior}>Següent</Buttonstyle>
           {Strings.map((e, index) => {
