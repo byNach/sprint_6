@@ -4,6 +4,7 @@ import Strings from './components/Text';
 import Buttonstyle from './styles/styled-button';
 import Pstyle from './styles/styled-p';
 import PstyleBg from './styles/styled-p-bg';
+import DivPhraseBgStyle from './styles/styled-phrase-bg'
 import { useState } from 'react';
 import DivStyleWellcome from './styles/styled-wellcome-div';
 import EntrarButton from './styles/styled-entrar-button';
@@ -19,25 +20,25 @@ function App() {
   const [num, setNum] = useState(0);
   const anterior = () => {
     if (num === 0) {
-      setNum(Strings.length -1)
+      setNum(Strings.length - 1)
     }
     else {
       setNum(num - 1);
     }
   };
   const posterior = () => {
-    if (num === Strings.length -1) {
+    if (num === Strings.length - 1) {
       setNum(0)
     }
     else {
       setNum(num + 1);
     }
   };
-
+  
   return (
     <>
       {renderApp ? (
-        <>
+        <DivPhraseBgStyle style={{ backgroundImage: `url(./images/${num}.jpg` }}>
           <Buttonstyle onClick={anterior}>Anterior</Buttonstyle>
           <Buttonstyle onClick={posterior}>Següent</Buttonstyle>
           {Strings.map((e, index) => {
@@ -48,7 +49,7 @@ function App() {
               return <Pstyle key={index}><Scene phrase={Strings[index].text} /></Pstyle>
             }
           })}
-        </>
+        </DivPhraseBgStyle>
       ) : (
         <DivStyleWellcome>
           <Description />
